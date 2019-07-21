@@ -41,26 +41,26 @@ public class MainActivity extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        text_player_play = (TextView) findViewById(R.id.text_player);
+        text_player_play = findViewById(R.id.text_player);
         text_player_play.setOnClickListener(this);
 
-        text_player_stop = (TextView) findViewById(R.id.text_player_stop);
+        text_player_stop = findViewById(R.id.text_player_stop);
         text_player_stop.setOnClickListener(this);
 
-        tempo_show = (TextView) findViewById(R.id.tempo_show);
-        pitch_show = (TextView) findViewById(R.id.pitch_show);
-        rate_show = (TextView) findViewById(R.id.rate_show);
+        tempo_show = findViewById(R.id.tempo_show);
+        pitch_show = findViewById(R.id.pitch_show);
+        rate_show = findViewById(R.id.rate_show);
 
-        tempo_seek = (SeekBar) findViewById(R.id.tempo_seek);
+        tempo_seek = findViewById(R.id.tempo_seek);
         tempo_seek.setOnSeekBarChangeListener(onTempoSeekBarListener);
 
-        pitch_seek = (SeekBar) findViewById(R.id.pitch_seek);
+        pitch_seek = findViewById(R.id.pitch_seek);
         pitch_seek.setOnSeekBarChangeListener(onPitchSeekBarListener);
 
-        rate_seek = (SeekBar) findViewById(R.id.rate_seek);
+        rate_seek = findViewById(R.id.rate_seek);
         rate_seek.setOnSeekBarChangeListener(onRateSeekBarListener);
 
-        radiogroup = (RadioGroup) findViewById(R.id.radiogroup);
+        radiogroup = findViewById(R.id.radiogroup);
         radiogroup.setOnCheckedChangeListener(onCheckedChangeListener);
 
         findViewById(R.id.text_player_record).setOnClickListener(new View.OnClickListener() {

@@ -17,8 +17,6 @@ import android.widget.TextView;
 import com.smp.soundtouchandroid.SoundStreamAduioRecorder;
 import com.smp.soundtouchandroid.SoundTouch;
 
-import java.io.File;
-
 public class RecordActivity extends Activity {
 
     private static final String TAG = RecordActivity.class.getSimpleName();
@@ -52,22 +50,22 @@ public class RecordActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main1);
+        setContentView(R.layout.activity_record);
 
-        recorderText = (TextView) findViewById(R.id.text_recorder);
-        recorderLayout = (LinearLayout) findViewById(R.id.layout_recorder);
-        recorderImage = (ImageView) findViewById(R.id.image_recorder);
+        recorderText = findViewById(R.id.text_recorder);
+        recorderLayout = findViewById(R.id.layout_recorder);
+        recorderImage = findViewById(R.id.image_recorder);
         recorderLayout.setOnTouchListener(recordTouchedListener);
 
-        playerText = (TextView) findViewById(R.id.text_player);
-        playerLayout = (LinearLayout) findViewById(R.id.layout_player);
-        playerImage = (ImageView) findViewById(R.id.image_player);
+        playerText = findViewById(R.id.text_player);
+        playerLayout = findViewById(R.id.layout_player);
+        playerImage = findViewById(R.id.image_player);
         playerLayout.setOnClickListener(playListener);
         playerLayout.setClickable(false);
 
-        pitchSeekBar = (SeekBar) findViewById(R.id.pitch_seek);
+        pitchSeekBar = findViewById(R.id.pitch_seek);
         pitchSeekBar.setOnSeekBarChangeListener(onPitchSeekBarListener);
-        pitchResetButton = (Button) findViewById(R.id.button_reset_pitch);
+        pitchResetButton = findViewById(R.id.button_reset_pitch);
         pitchResetButton.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -79,11 +77,11 @@ public class RecordActivity extends Activity {
             }
         });
 
-        pitchShow = (TextView) findViewById(R.id.pitch_show);
+        pitchShow = findViewById(R.id.pitch_show);
 
-        tempoSeekBar = (SeekBar) findViewById(R.id.tempo_seek);
+        tempoSeekBar = findViewById(R.id.tempo_seek);
         tempoSeekBar.setOnSeekBarChangeListener(onTempoSeekBarListener);
-        tempoResetButton = (Button) findViewById(R.id.button_reset_tempo);
+        tempoResetButton = findViewById(R.id.button_reset_tempo);
         tempoResetButton.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -95,12 +93,12 @@ public class RecordActivity extends Activity {
             }
         });
 
-        tempoShow = (TextView) findViewById(R.id.tempo_show);
+        tempoShow = findViewById(R.id.tempo_show);
 
         soundTouch = new SoundTouch(0, 2, 1, 2, 1, 1);
         soundTouchRec = new SoundStreamAduioRecorder(this, soundTouch);
 
-        log = (TextView) findViewById(R.id.log);
+        log = findViewById(R.id.log);
         log.setMovementMethod(ScrollingMovementMethod.getInstance());
     }
 
